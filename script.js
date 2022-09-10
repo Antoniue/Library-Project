@@ -9,6 +9,8 @@ function Book(title, author, pages, isRead)
 function addBookToLibrary(myLibrary,book)
 {
     myLibrary.push(book);
+    booksContainer.innerHTML ='';
+    drawBooks(myLibrary);
 }
 
 function removeBookFromLibrary(bookIndex)
@@ -83,4 +85,22 @@ addBookToLibrary(myLibrary, new Book('test','test',10,true));
 addBookToLibrary(myLibrary, new Book('test','test',10,false));
 addBookToLibrary(myLibrary, new Book('test','test',10,true));
 addBookToLibrary(myLibrary, new Book('test','test',10,false));
-drawBooks(myLibrary);
+
+const submitButt = document.querySelector('.submitButt');
+
+let book_title = document.querySelector('#book_title');
+let book_author = document.querySelector('#book_author');
+let book_pages = document.querySelector('#book_pages');
+let readSwitch = document.querySelector('#switch');
+
+submitButt.addEventListener(
+    'click', function()
+    {
+        let bool;
+        if(readSwitch.checked)
+        bool = true;
+        else
+        bool = false;
+        addBookToLibrary(myLibrary,new Book(book_title.value,book_author.value, book_pages.value,bool))
+    }
+);

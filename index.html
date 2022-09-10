@@ -12,7 +12,7 @@
     <div class="container">
         <div class="sideBar">
             <div class="addTitle">Add Book</div>
-            <form action="" method="post" class="addForm">
+            <form method="post" onsubmit="return false" class="addForm">
                 <label class="inputLabel firstLabel" for="book_title">Book Title:
                 <input type="text" name="book_title" id="book_title">
                 </label>
@@ -25,7 +25,7 @@
                 <div class="isRead">
                     Have you read this book?
                     <label class="readSwitch">
-                     <input type="checkbox">
+                     <input type="checkbox" id="switch" value="true">
                      <span class="slider round"></span>
                     </label>
                 </div>
