@@ -38,6 +38,12 @@ body{
     background-color: white;
 }
 
+.bookRead{
+    display: flex;
+    width: 300px;
+    justify-content: center;
+}
+
 .bookNumber{
     font-size: 50px;
     font-weight: bold;
