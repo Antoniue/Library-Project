@@ -31,6 +31,10 @@ function drawBooks(library)
     + '<div class="bookAuthor">Author: '+library[index].author+'</div>'
     + '<div class="bookPages">Pages: '+library[index].pages+'</div>'
     + '<div class="bookRead" '+drawRead(library[index])+'>Read</div>'
+    + '<div class="bookButtons">'
+    + '<div class="removeBook">Remove Book</div>'
+    + '<div class="changeRead">Change Read</div>'
+    + '</div>'
     + '</div>'
     +'</div>'
     let booksContainer = document.querySelector('.booksContainer');
@@ -38,8 +42,10 @@ function drawBooks(library)
     }
 }
 
-
-
-
 let bookCounter = 0;
 let myLibrary = [];
+// addBookToLibrary(myLibrary, new Book('test','test',10,true));
+// addBookToLibrary(myLibrary, new Book('test','test',10,false));
+// addBookToLibrary(myLibrary, new Book('test','test',10,true));
+// addBookToLibrary(myLibrary, new Book('test','test',10,false));
+// drawBooks(myLibrary);
