@@ -10,6 +10,29 @@
 </head>
 <body>
     <div class="container">
+        <div class="sideBar">
+            <div class="addTitle">Add Book</div>
+            <form action="" method="post" class="addForm">
+                <label class="inputLabel firstLabel" for="book_title">Book Title:
+                <input type="text" name="book_title" id="book_title">
+                </label>
+                <label class="inputLabel" for="book_author">Book Author:
+                <input type="text" name="book_author" id="book_author">
+                </label>
+                <label class="inputLabel" for="book_pages">Book Pages:
+                <input type="number" name="book_pages" id="book_pages">
+                </label>
+                <div class="isRead">
+                    Have you read this book?
+                    <label class="readSwitch">
+                     <input type="checkbox">
+                     <span class="slider round"></span>
+                    </label>
+                </div>
+                <input class="submitButt" type="submit" value="Submit">
+            </form>
+            <div class="addButton"></div>
+        </div>
         <div class="libraryTitle">Library</div>
         <div class="booksContainer">
             <!-- <div class="singleBook">

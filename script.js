@@ -15,7 +15,6 @@ function removeBookFromLibrary(bookIndex)
 {
     myLibrary.splice(bookIndex,1);
     booksContainer.innerHTML ='';
-    console.log('removed');
     drawBooks(myLibrary);
 }
 
