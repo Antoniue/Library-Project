@@ -81,10 +81,6 @@ let removeBook = document.querySelectorAll('.removeBook');
 let changeRead = document.querySelectorAll('.changeRead');
 let booksContainer = document.querySelector('.booksContainer');
 let myLibrary = [];
-addBookToLibrary(myLibrary, new Book('test','test',10,true));
-addBookToLibrary(myLibrary, new Book('test','test',10,false));
-addBookToLibrary(myLibrary, new Book('test','test',10,true));
-addBookToLibrary(myLibrary, new Book('test','test',10,false));
 
 const submitButt = document.querySelector('.submitButt');
 
