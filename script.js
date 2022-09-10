@@ -89,6 +89,8 @@ let book_author = document.querySelector('#book_author');
 let book_pages = document.querySelector('#book_pages');
 let readSwitch = document.querySelector('#switch');
 
+let form = document.querySelector('.addForm');
+
 submitButt.addEventListener(
     'click', function()
     {
@@ -98,5 +100,6 @@ submitButt.addEventListener(
         else
         bool = false;
         addBookToLibrary(myLibrary,new Book(book_title.value,book_author.value, book_pages.value,bool))
+        form.reset();
     }
 );
