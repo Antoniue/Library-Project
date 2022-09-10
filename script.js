@@ -15,6 +15,14 @@ function removeBookFromLibrary(bookIndex)
 {
     myLibrary.splice(bookIndex,1);
     booksContainer.innerHTML ='';
+    console.log('removed');
+    drawBooks(myLibrary);
+}
+
+function changeReadStatus(bookIndex)
+{
+    myLibrary[bookIndex].isRead = !myLibrary[bookIndex].isRead;
+    booksContainer.innerHTML ='';
     drawBooks(myLibrary);
 }
 
@@ -45,8 +53,31 @@ function drawBooks(library)
     +'</div>'
     booksContainer.innerHTML = booksContainer.innerHTML + htmlTemplate;
     }
+    removeBook = document.querySelectorAll('.removeBook');
+    changeRead = document.querySelectorAll('.changeRead');
+    for(let index = 0; index < removeBook.length; index++)
+    {
+        removeBook[index].addEventListener(
+            'click',
+            () =>
+            {
+                removeBookFromLibrary(index);
+            }
+        );
+    }
+    for(let index = 0; index < changeRead.length; index++)
+    {
+        changeRead[index].addEventListener(
+            'click',
+            () =>
+            {
+                changeReadStatus(index);
+            }
+        );
+    }
 }
-
+let removeBook = document.querySelectorAll('.removeBook');
+let changeRead = document.querySelectorAll('.changeRead');
 let booksContainer = document.querySelector('.booksContainer');
 let myLibrary = [];
 addBookToLibrary(myLibrary, new Book('test','test',10,true));
@@ -54,16 +85,3 @@ addBookToLibrary(myLibrary, new Book('test','test',10,false));
 addBookToLibrary(myLibrary, new Book('test','test',10,true));
 addBookToLibrary(myLibrary, new Book('test','test',10,false));
 drawBooks(myLibrary);
-
-const removeBook = document.querySelectorAll('.removeBook');
-const changeRead = document.querySelectorAll('.changeRead');
-for(let index = 0; index < removeBook.length; index++)
-{
-    removeBook[index].addEventListener(
-        'click',
-        function()
-        {
-            removeBookFromLibrary(index);
-        }
-    );
-}
