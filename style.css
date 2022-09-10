@@ -5,7 +5,7 @@ body{
 .container{
     display: grid;
     grid-template-rows: 1fr 5fr;
-    grid-template-columns: repeat(autofit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-areas:
     "library"
     "books";
@@ -22,6 +22,7 @@ body{
     grid-area: books;
     display: flex;
     margin-top: 50px;
+    gap: 50px;
 }
 
 .singleBook{
