@@ -33,5 +33,3 @@ function drawBooks(book)
 
 let bookCounter = 0;
 let myLibrary = [];
-addBookToLibrary(myLibrary, new Book('test','test', 105, true))
-console.log(myLibrary);
