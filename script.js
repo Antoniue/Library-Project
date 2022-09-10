@@ -10,7 +10,6 @@ function addBookToLibrary(myLibrary,book)
 {
     myLibrary.push(book);
     bookCounter++;
-    drawBooks(myLibrary[bookCounter-1]);
 }
 
 function drawRead(book)
@@ -21,19 +20,22 @@ function drawRead(book)
     return 'style="background-color: red;"';
 }
 
-function drawBooks(book)
+function drawBooks(library)
 {
+    for(let index = 0; index < library.length; index++)
+    {
     let htmlTemplate = '<div class="singleBook">'
     + '<div class="bookNumber">Book #'+bookCounter+'</div>'
     + '<div class="bookContents">'
-    + '<div class="bookTitle">Title: '+book.title+'</div>'
-    + '<div class="bookAuthor">Author: '+book.author+'</div>'
-    + '<div class="bookPages">Pages: '+book.pages+'</div>'
-    + '<div class="bookRead" '+drawRead(book)+'>Read</div>'
+    + '<div class="bookTitle">Title: '+library[index].title+'</div>'
+    + '<div class="bookAuthor">Author: '+library[index].author+'</div>'
+    + '<div class="bookPages">Pages: '+library[index].pages+'</div>'
+    + '<div class="bookRead" '+drawRead(library[index])+'>Read</div>'
     + '</div>'
     +'</div>'
     let booksContainer = document.querySelector('.booksContainer');
     booksContainer.innerHTML = booksContainer.innerHTML + htmlTemplate;
+    }
 }
 
 
@@ -41,4 +43,3 @@ function drawBooks(book)
 
 let bookCounter = 0;
 let myLibrary = [];
-addBookToLibrary(myLibrary, new Book('test', 'test', 10, true));
